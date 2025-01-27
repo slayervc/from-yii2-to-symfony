@@ -1,0 +1,26 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    src\Common\Infrastructure\Symfony\Security\YiiPasswordHasher: ~
+    src\Common\Infrastructure\Symfony\Security\SecurityUserRepository: ~
+    src\Common\Infrastructure\Symfony\Security\UserProvider: ~
+
+    firewall_biz_request_matcher:
+        class: src\Common\Infrastructure\Symfony\Security\AppKindRequestMatcher
+        arguments:
+            $currentAppKind: '%yii_app_name%'
+            $requiredAppKind: 'biz'
+
+    access_control_biz_public_request_matcher:
+        class: src\Common\Infrastructure\Symfony\Security\AppKindRequestMatcher
+        arguments:
+            $currentAppKind: '%yii_app_name%'
+            $requiredAppKind: 'biz'
+            $paths:
+                - '^/user/signup'
+                - '^/user/login'
+                - '^/user/forgot-password'
+                - '^/swagger'
+                #...

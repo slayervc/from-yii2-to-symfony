@@ -1,0 +1,16 @@
+imports:
+    - { resource: services/ }
+
+parameters:
+    yii_app_name: '%env(YII_APP_NAME)%'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    #...
+
+    src\Common\Infrastructure\Symfony\Routing\AppKindRouteChecker:
+        arguments:
+            $currentAppKind: '%yii_app_name%'

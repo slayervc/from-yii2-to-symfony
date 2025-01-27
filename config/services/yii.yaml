@@ -1,0 +1,10 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+
+    src\Common\Infrastructure\Yii2\ApplicationLoader:
+        arguments:
+            $projectRoot: '%kernel.project_dir%'
+            $yiiAppName: '%yii_app_name%'

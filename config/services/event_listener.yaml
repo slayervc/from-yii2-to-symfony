@@ -1,0 +1,19 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    src\Common\Infrastructure\Symfony\EventListener\:
+        resource: '../../src/Common/Infrastructure/Symfony/EventListener/'
+
+    src\Common\Infrastructure\Symfony\EventListener\ApplicationSwitcher:
+        arguments:
+            $matcher: '@router.default'
+            $requestStack:  '@request_stack'
+            $context: '@router.request_context'
+            $projectDir: '%kernel.project_dir%'
+            $debug: 'kernel.debug'
+
+    src\Common\Infrastructure\Symfony\EventListener\YiiApplicationRunner:
+        arguments:
+            $symfonyAppEnv: '%kernel.environment%'
