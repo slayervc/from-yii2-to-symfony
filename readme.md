@@ -1,5 +1,5 @@
 Это пример кода для моей статьи
-"[Переход на Symfony в заскорузлом Yii2 монолите: подробный разбор](https://akarpov.substack.com/p/symfony-yii2)".
+"[Переход на Symfony в заскорузлом Yii2 монолите: подробный разбор](https://t.me/ak_architect/26)".
 Далее следует оригинальный readme, который я писал для команды.
 
 ## Symfony console
